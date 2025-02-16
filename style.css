@@ -7,7 +7,6 @@ body {
     font-size: 16px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    color: #FFFFFF;
     font-family: sans-serif;
 }
 ul, ol {
@@ -31,6 +30,7 @@ input, button, textarea, select {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #FFFFFF;
 }
 .todo-box{
     background-color: #1D1825;
@@ -39,6 +39,15 @@ input, button, textarea, select {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    transition: all 2s;
+}
+header{
+    text-align: center;
+}
+header,section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 .add-task{
     display: flex;
@@ -47,21 +56,28 @@ input, button, textarea, select {
     width: 100%;
 }
 .add-task input{
-    padding-left: 10px;
     background-color: transparent;
     border: 1px solid #9E78CF;
     outline: none;
     color: #777777;
     border-radius: 0.5rem;
     width: 100%;
+    /* padding: 8px; */
+    padding-left: 10px;
 }
 .add-task img{
     padding: 0.5rem;
     background-color: #9E78CF;
     border-radius: 8px;
+    cursor: pointer;
 }
 img{
     height: 2rem;
+}
+.error{
+    text-align: left;
+    color: rgb(194, 47, 47);
+    display: none;
 }
 .todobar{
     display: flex;
@@ -76,7 +92,7 @@ img{
     padding: 1rem;
     border-radius: 10px;
 }
-.task-card .content p{
+.simpleP{
     color: #9E78CF;
 }
 .icons{
@@ -87,14 +103,20 @@ img{
     height: 20px;
     width: 20px;
 }
+.tick{
+    cursor: pointer;
+}
+.del{
+    cursor: pointer;
+}
 .Done{
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-.task-card .content .task-done{
-    text-decoration: line-through;
+.task-done{
     color: #78CFB0;
+    text-decoration: line-through;
 }
 @media screen and (min-width:1024px) {
     .todo-box{
